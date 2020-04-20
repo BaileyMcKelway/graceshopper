@@ -1,6 +1,7 @@
 const router = require('express').Router()
 module.exports = router
 
+router.use('/singlecars', require('./singlecars'))
 router.use('/users', require('./users'))
 
 router.use((req, res, next) => {
