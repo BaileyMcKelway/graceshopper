@@ -1,16 +1,15 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+
 import {connect} from 'react-redux'
 
 /**
  * COMPONENT
  */
 export const SingleCar = props => {
-  //   const {email} = props
-
+  const {singleCar} = props
   return (
     <div>
-      <h3>Welcome, {email}</h3>
+      <p>CERRS</p>
     </div>
   )
 }
@@ -20,11 +19,11 @@ export const SingleCar = props => {
  */
 const mapState = state => {
   return {
-    // email: state.user.email,
+    singleCar: {}
   }
 }
 
-export default connect(mapState)(UserHome)
+export default connect(mapState)(SingleCar)
 
 /**
  * PROP TYPES

@@ -1,10 +1,9 @@
 import axios from 'axios'
-import history from '../history'
 
 /**
  * ACTION TYPES
  */
-const GET_SINGLE_CAR = 'GET_SINGLE_CAR'
+const GET_SINGLECAR = 'GET_SINGLECAR'
 
 /**
  * INITIAL STATE
@@ -14,7 +13,7 @@ const defaultSingleCar = {}
 /**
  * ACTION CREATORS
  */
-const getSingleCar = car => ({type: GET_SINGLE_CAR, car})
+const getSingleCar = car => ({type: GET_SINGLECAR, car})
 
 /**
  * THUNK CREATORS
@@ -31,11 +30,13 @@ export const fetchSingleCar = () => async dispatch => {
 /**
  * REDUCER
  */
-export default function(state = defaultSingleCar, action) {
+const singleCarReducer = (state = defaultSingleCar, action) => {
   switch (action.type) {
-    case GET_SINGLE_CAR:
+    case GET_SINGLECAR:
       return {defaultSingleCar: action.car}
     default:
       return state
   }
 }
+
+export default singleCarReducer
