@@ -25,6 +25,27 @@ const Car = db.define('car', {
   Color: {
     type: Sequelize.STRING,
     allowNull: false
+  },
+  InteriorColor: {
+    type: Sequelize.STRING
+  },
+  EngineType: {
+    type: Sequelize.STRING
+  },
+  StockNo: {
+    type: Sequelize.INTEGER
+  },
+  Transmission: {
+    type: Sequelize.STRING
+  },
+  Doors: {
+    type: Sequelize.INTEGER
+  },
+  VIN: {
+    type: Sequelize.STRING
+  },
+  VehicleID: {
+    type: Sequelize.INTEGER
   }
 })
 

@@ -18,9 +18,9 @@ const getSingleCar = car => ({type: GET_SINGLECAR, car})
 /**
  * THUNK CREATORS
  */
-export const fetchSingleCar = () => async dispatch => {
+export const buildfetchSingleCarThunk = () => async dispatch => {
   try {
-    const res = await axios.get(`/api/singleCar/${1}`)
+    const res = await axios.get(`/api/singlecar/1`)
     dispatch(getSingleCar(res.data))
   } catch (err) {
     console.error(err)
@@ -33,7 +33,7 @@ export const fetchSingleCar = () => async dispatch => {
 const singleCarReducer = (state = defaultSingleCar, action) => {
   switch (action.type) {
     case GET_SINGLECAR:
-      return {defaultSingleCar: action.car}
+      return {...action.car}
     default:
       return state
   }
